@@ -14,17 +14,20 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      /* 關鍵：強制宣告背景透明且支援深淺色 */
+      background-color: transparent !important;
+      color-scheme: light dark;
+      /* 移除可能導致白底出現的高度限制 */
+      height: auto;
+      min-height: unset;
+      overflow: hidden; 
+    }
+
     body {
       display: grid;
       font-family: "Poppins", sans-serif;
       place-items: center;
-      
-      /* --- 關鍵修改：宣告支援深淺色模式切換 --- */
-      color-scheme: light dark;
-      
-      /* --- 強制背景透明，讓它抓取 Notion 頁面底色 --- */
-      background-color: transparent !important;
-      
       margin: 0;
     }
 
@@ -35,12 +38,12 @@
 
     .icon {
       font-size: 2em;
-      /* 使用中性灰色，這在淺色或深色底都能有基本的能見度 */
-      color: #7a7a7a;
+      /* 使用稍亮的灰色，確保在 Notion 深色模式下仍有基本能見度 */
+      color: #888;
       transition: color 0.3s ease;
     }
 
-    /* Hover 顏色維持各品牌原色 */
+    /* Hover 品牌原色 */
     .blog:hover { color: #ffbd2f; }
     .email:hover { color: #23c8c8; }
     .facebook:hover { color: #4267B2; }
