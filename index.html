@@ -18,8 +18,14 @@
       display: grid;
       font-family: "Poppins", sans-serif;
       place-items: center;
-      /* 已移除黑色背景，恢復透明 */
-      background-color: transparent; 
+      
+      /* --- 關鍵修改：宣告支援深淺色模式切換 --- */
+      color-scheme: light dark;
+      
+      /* --- 強制背景透明，讓它抓取 Notion 頁面底色 --- */
+      background-color: transparent !important;
+      
+      margin: 0;
     }
 
     .wrapper {
@@ -29,7 +35,7 @@
 
     .icon {
       font-size: 2em;
-      /* 恢復為原始的深灰色，適合淺色或 Notion 預設背景 */
+      /* 使用中性灰色，這在淺色或深色底都能有基本的能見度 */
       color: #7a7a7a;
       transition: color 0.3s ease;
     }
