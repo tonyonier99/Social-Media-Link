@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-
-<!-- Auther: Shorouk Abdelaziz  https://shorouk.dev -->
-
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,157 +18,82 @@
       display: grid;
       font-family: "Poppins", sans-serif;
       place-items: center;
+      /* --- 重點修改：加入背景黑色並確保填滿螢幕 --- */
+      background-color: #000; 
+      min-height: 100vh;
     }
 
     .wrapper {
-      padding-top: 10px;
+      padding: 20px;
       display: inline-flex;
-
     }
 
     .icon {
       /* Change the icon size here */
       font-size: 2em;
-      /* Change the icons colours here*/
-      color: #7a7a7a
+      /* 稍微調亮預設圖示顏色，在黑底才看得見 */
+      color: #b0b0b0;
+      transition: color 0.3s ease;
     }
 
-
-    .blog:hover {
-      color: #ffbd2f;
-    }
-
-    .email:hover {
-      color: #23c8c8;
-    }
-
-    .facebook:hover {
-      color: #4267B2;
-    }
-
-    .instagram:hover {
-      color: rgb(241, 102, 217);
-    }
-
-    .linkedin:hover {
-      color: #0e76a8;
-    }
-
-    .twitter:hover {
-      color: #26a7de;
-    }
-
-    .reddit:hover {
-      color: #ff4500;
-    }
-
-    .tiktok:hover {
-      color: #ff0050;
-    }
-
-    .youtube:hover {
-      color: #FF0000;
-    }
-
-    .pinterest:hover {
-      color: #c8232c;
-    }
-
-    .telegram:hover {
-      color: #2AABEE;
-    }
+    /* 滑鼠懸停顏色維持原樣 (在黑底會更顯眼漂亮) */
+    .blog:hover { color: #ffbd2f; }
+    .email:hover { color: #23c8c8; }
+    .facebook:hover { color: #4267B2; }
+    .instagram:hover { color: rgb(241, 102, 217); }
+    .linkedin:hover { color: #0e76a8; }
+    .twitter:hover { color: #26a7de; }
+    .reddit:hover { color: #ff4500; }
+    .tiktok:hover { color: #ff0050; }
+    .youtube:hover { color: #FF0000; }
+    .pinterest:hover { color: #c8232c; }
+    .telegram:hover { color: #2AABEE; }
 
     .social {
       position: relative;
-      margin: 10px;
+      margin: 15px;
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    /* 增加一點點滑鼠指到的跳動效果 */
+    .social:hover {
+      transform: translateY(-3px);
     }
   </style>
-
 </head>
 
 <body>
-
-  <body>
-
     <div class="wrapper">
-
-      <!-- Start blog Icon -->
       <div id="blog" onclick="navigate(this.id)" class="social">
         <span class="icon blog"><i class="fa-solid fa-blog"></i></span>
       </div>
-      <!-- End blog Icon -->
-
-      <!-- Start email Icon -->
       <div id="email" onclick="navigate(this.id)" class="social">
         <span class="icon email"><i class="fa-solid fa-envelope"></i></span>
       </div>
-      <!-- End email Icon -->
-      
-      <!-- Start linkedin Icon -->
       <div id="linkedin" onclick="navigate(this.id)" class="social">
         <span class="icon linkedin"><i class="fab fa-linkedin"></i></span>
       </div>
-      <!-- End linkedin Icon -->
-      
-      <!-- Start facebook Icon -->
       <div id="facebook" onclick="navigate(this.id)" class="social">
         <span class="icon facebook"><i class="fab fa-facebook"></i></span>
       </div>
-      <!-- End facebook Icon -->
-
-      <!-- Start instagram Icon -->
       <div id="instagram" onclick="navigate(this.id)" class="social">
         <span class="icon instagram"><i class="fab fa-instagram"></i></span>
       </div>
-      <!-- End instagram Icon -->
-
-      <!-- Start youtube Icon -->
       <div id="youtube" onclick="navigate(this.id)" class="social">
         <span class="icon youtube"><i class="fab fa-youtube"></i></span>
       </div>
-      <!-- End youtube Icon -->
-
-
-
-
-
     </div>
-
-
-
 
     <script>
       function navigate(id) {
-
-        //if you want the URL to open in the same window use '_parent'  instead of '_blank'
-
-        if (id === "blog")
-          window.open("https://yasac.substack.com/", '_blank').focus(); //Add the url to your blog
-
-        else if (id === "email") {
-          window.open("mailto:tonyonier99@gmail.com", '_blank').focus(); //Add your email after "mailto:""
-        }
-
-        else if (id === "facebook") {
-          window.open("https://www.facebook.com/profile.php?id=100057133192888", '_blank').focus(); //Add the url to your facebook page or account
-        }
-        else if (id === "instagram") {
-          window.open("https://www.instagram.com/__yasac/", '_blank').focus(); //Add the url to your instagram account
-        }
-        else if (id === "linkedin") {
-          window.open("https://www.linkedin.com/in/%E5%86%A0%E5%BB%B7-%E9%BB%83-559209367/", '_blank').focus(); //Add the url to your pinterest account
-        }
-        else if (id === "youtube") {
-          window.open("https://www.youtube.com/@yasa_c", '_blank').focus(); //Add the url to your youtube account
-        }
-
+        if (id === "blog") window.open("https://yasac.substack.com/", '_blank').focus();
+        else if (id === "email") window.open("mailto:tonyonier99@gmail.com", '_blank').focus();
+        else if (id === "facebook") window.open("https://www.facebook.com/profile.php?id=100057133192888", '_blank').focus();
+        else if (id === "instagram") window.open("https://www.instagram.com/__yasac/", '_blank').focus();
+        else if (id === "linkedin") window.open("https://www.linkedin.com/in/%E5%86%A0%E5%BB%B7-%E9%BB%83-559209367/", '_blank').focus();
+        else if (id === "youtube") window.open("https://www.youtube.com/@yasa_c", '_blank').focus();
       }
-
     </script>
-
-
-
-  </body>
-
+</body>
 </html>
